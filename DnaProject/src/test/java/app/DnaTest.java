@@ -25,54 +25,63 @@ public class DnaTest {
 
     @org.junit.Before
     public void setUp() throws Exception {
-//        Graph graph = new Graph();
-//        ArrayList<String> fragmentsArray = new ArrayList();
-
+        Graph graph = new Graph(fragmentsNumber, null);
+        @SuppressWarnings("unused")
+		ArrayList<String> fragmentsArray = new ArrayList<String>();
+        Thread.sleep(1000); 
     }
 
     @org.junit.Test
-    public void rightFragments() {
+    public void rightFragments() throws InterruptedException {
         
         Dna dna = new Dna();
-
-        ArrayList<String> fragmentsArray = new ArrayList();
+        Thread.sleep(1000); 
+        ArrayList<String> fragmentsArray = new ArrayList<String>();
         fragmentsArray.add("АГЦЦ");
+        Thread.sleep(1000); 
         fragmentsArray.add("ЦГГУ");
+        Thread.sleep(1000); 
         fragmentsArray.add("ГГУАА");
+        Thread.sleep(1000); 
         fragmentsArray.add("УААЦЦ");
         fragmentsNumber = 4;
-
+        Thread.sleep(1000); 
         int actual = dna.testFunc(fragmentsArray, fragmentsNumber);
+        Thread.sleep(1000); 
         int expected = 1;
+        Thread.sleep(1000); 
         assertEquals(expected, actual);
     }
 
     @org.junit.Test
-    public void falseFragments() {
+    public void falseFragments() throws InterruptedException {
 
         Dna dna = new Dna();
-
-        ArrayList<String> fragmentsArray = new ArrayList();
+        Thread.sleep(1000); 
+        ArrayList<String> fragmentsArray = new ArrayList<String>();
         fragmentsArray.add("АГЦЦ");
+        Thread.sleep(1000); 
         fragmentsArray.add("ГГУАА");
+        Thread.sleep(1000); 
         fragmentsArray.add("УААЦЦ");
+        Thread.sleep(1000); 
         fragmentsNumber = 3;
-
+        Thread.sleep(1000); 
         int actual = dna.testFunc(fragmentsArray, fragmentsNumber);
         int expected = 0;
         assertEquals(expected, actual);
     }
 
     @org.junit.Test
-    public void errorFragments() {
-
+    public void errorFragments() throws InterruptedException {
+    	Thread.sleep(1000); 
         Dna dna = new Dna();
-        ArrayList<String> fragmentsArray = new ArrayList();
+        ArrayList<String> fragmentsArray = new ArrayList<String>();
         fragmentsArray.add("ASD$@#");
         fragmentsArray.add("GSA!&");
         fragmentsArray.add("FG1324");
         fragmentsNumber = 3;
-
+        Thread.sleep(1000); 
         int actual = dna.testFunc(fragmentsArray, fragmentsNumber);
         int expected = -1;
         assertEquals(expected, actual);

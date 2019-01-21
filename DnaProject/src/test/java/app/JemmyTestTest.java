@@ -1,14 +1,15 @@
 package app;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.netbeans.jemmy.JemmyProperties;
-import org.netbeans.jemmy.QueueTool;
-import org.netbeans.jemmy.operators.JFrameOperator;
-import org.netbeans.jemmy.operators.*;
+//import org.netbeans.jemmy.JemmyProperties;
+//import org.netbeans.jemmy.QueueTool;
+//import org.netbeans.jemmy.operators.JFrameOperator;
 
-import static org.junit.Assert.*;
+import javax.swing.*;
 
 public class JemmyTestTest {
     JFrameOperator mainFrame;
